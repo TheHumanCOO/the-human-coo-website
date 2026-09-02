@@ -140,9 +140,13 @@ main { overflow: hidden; }
 .contact-inner .kicker { justify-content: center; }
 .contact-inner h2 { font-size: clamp(58px, 8vw, 104px); }
 .contact-inner > p:not(.kicker) { font-size: 19px; line-height: 1.65; margin: 32px auto 40px; max-width: 680px; }
+.contact-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 .button-light { background: white; color: var(--forest); }
 .button-light:hover { background: var(--sage-pale); }
+.button-outline-light { background: transparent; border: 1px solid rgba(255,255,255,.75); color: white; }
+.button-outline-light:hover { background: rgba(255,255,255,.12); }
 .contact-inner small { display: block; font-size: 11px; margin-top: 23px; opacity: .85; }
+.contact-inner small a { text-decoration: underline; text-underline-offset: 3px; }
 
 footer { align-items: end; background: var(--white); color: var(--forest); display: grid; gap: 30px; grid-template-columns: 1fr 1.6fr auto; padding: 70px clamp(24px, 7vw, 110px) 35px; }
 footer > p { color: var(--muted); font-size: 18px; line-height: 1.55; margin: 0; max-width: 460px; }

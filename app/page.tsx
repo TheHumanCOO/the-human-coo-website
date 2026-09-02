@@ -108,7 +108,13 @@ export default function Home() {
             processes and systems you already have to work better together.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="button button-primary">
+            <a
+              href="https://tally.so/r/XxbQ54"
+              className="button button-primary"
+              data-tally-open="XxbQ54"
+              data-tally-layout="modal"
+              data-tally-width="700"
+            >
               Tell me what&apos;s getting in your way <ArrowRight size={18} />
             </a>
             <a href="#support" className="text-link">
@@ -232,10 +238,28 @@ export default function Home() {
             Tell me what is happening, what is taking too much time or what you
             wish worked better. We can work out the right next step from there.
           </p>
-          <a className="button button-light" href="mailto:hello@thehumancoo.co.uk">
-            Tell me about your business <ArrowRight size={18} />
-          </a>
-          <small>Prefer email? hello@thehumancoo.co.uk</small>
+          <div className="contact-actions">
+            <a
+              className="button button-light"
+              href="https://tally.so/r/XxbQ54"
+              data-tally-open="XxbQ54"
+              data-tally-layout="modal"
+              data-tally-width="700"
+            >
+              Tell me about your business <ArrowRight size={18} />
+            </a>
+            <a
+              className="button button-outline-light"
+              href="https://calendly.com/the-humancoo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Book an introductory call <ArrowRight size={18} />
+            </a>
+          </div>
+          <small>
+            Prefer email? <a href="mailto:hello@thehumancoo.co.uk">hello@thehumancoo.co.uk</a>
+          </small>
         </div>
       </section>
 
