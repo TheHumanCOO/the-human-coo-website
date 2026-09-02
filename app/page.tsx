@@ -9,11 +9,11 @@ import {
 
 const problems = [
   "Admin is taking over your week",
-  "Your systems do not speak to each other",
+  "Your systems are not connected",
   "Important follow ups are being missed",
-  "Everything still depends on a spreadsheet",
+  "You do not have a clear view of what is happening",
   "You are paying for software you barely use",
-  "Growth has made the business harder to run",
+  "Growth has created more work, rather than making things easier",
 ];
 
 const services = [
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="problem-section section" id="problems">
         <div className="section-heading">
           <p className="kicker">Does this sound familiar?</p>
-          <h2>The business is growing, but the way it runs has not caught up.</h2>
+          <h2>Your business has outgrown the way it runs.</h2>
         </div>
         <div className="problem-grid">
           {problems.map((problem) => (
@@ -264,7 +264,7 @@ export default function Home() {
           <h2>What&apos;s getting in your way?</h2>
           <p>
             Tell me what is happening, what is taking too much time or what you
-            wish worked better. We can work out the right next step from there.
+            wish worked better. We&apos;ll work out the right next step together.
           </p>
           <div className="contact-actions">
             <a
