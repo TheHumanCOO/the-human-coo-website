@@ -284,7 +284,7 @@ export default function Home() {
             </a>
           </div>
           <small>
-            Prefer email? <a href="mailto:hello@thehumancoo.co.uk">hello@thehumancoo.co.uk</a>
+            Prefer email? <a href="mailto:hello@thehumancoo.com">hello@thehumancoo.com</a>
           </small>
         </div>
       </section>
