@@ -279,8 +279,6 @@ export default function Home() {
             <a
               className="button button-outline-light"
               href="https://calendly.com/hello-thehumancoo/30min"
-              target="_blank"
-              rel="noreferrer"
             >
               Book an introductory call <ArrowRight size={18} />
             </a>
