@@ -41,12 +41,36 @@ const services = [
 ];
 
 const capabilities = [
-  "Process improvement",
-  "Admin automation",
-  "Lead tracking and follow up",
-  "Dashboards and reporting",
-  "Tech stack simplification",
-  "Practical operational support",
+  {
+    title: "Process improvement",
+    description:
+      "Simplifying workflows, handovers, responsibilities and ways of working.",
+  },
+  {
+    title: "Automation and AI agents",
+    description:
+      "Practical automations and AI agents that reduce repetitive work, monitor activity, organise information and support faster follow up.",
+  },
+  {
+    title: "Lead tracking and follow up",
+    description:
+      "Creating a clear process for capturing enquiries, assigning actions and following up.",
+  },
+  {
+    title: "Dashboards and reporting",
+    description:
+      "Turning scattered information into useful, decision ready reporting.",
+  },
+  {
+    title: "Tech stack simplification",
+    description:
+      "Reviewing, connecting or consolidating tools, including Microsoft 365 and Google Workspace.",
+  },
+  {
+    title: "Practical operational support",
+    description:
+      "Hands on help with a particular problem, project or period of change.",
+  },
 ];
 
 const steps = [
@@ -104,8 +128,9 @@ export default function Home() {
           <p className="eyebrow"><CircleDot size={14} /> People first. Systems that work. Business made easier.</p>
           <h1>Making business <em>easier</em> to run.</h1>
           <p className="hero-intro">
-            Your business may not need another app. It may just need the people,
-            processes and systems you already have to work better together.
+            I help founders, growing teams and established organisations simplify
+            operations, improve processes and make better use of the systems they
+            already have.
           </p>
           <div className="hero-actions">
             <a
@@ -131,7 +156,7 @@ export default function Home() {
           <svg viewBox="0 0 270 58" aria-hidden="true">
             <path d="M4 31c20-28 38 25 60 0s41 22 65 0 43 15 68 0c20-12 42-6 69-4" />
           </svg>
-          <span>Practical operations support for small and growing businesses.</span>
+          <span>Support that meets your business where it is now.</span>
         </div>
       </section>
 
@@ -147,10 +172,10 @@ export default function Home() {
               delivering technology enabled change across large, complex organisations.
             </p>
             <p>
-              The Human COO brings that experience to smaller businesses in a
-              practical and accessible way. I listen, understand what is really
-              happening and help you create a business that works better for the
-              people running it.
+              The Human COO brings that experience to founders, growing teams and
+              established organisations in a practical and accessible way. I
+              listen, understand what is really happening and help you create a
+              business that works better for the people running it.
             </p>
           </div>
         </div>
@@ -205,11 +230,14 @@ export default function Home() {
         </div>
         <div className="capability-list">
           {capabilities.map((capability, index) => (
-            <div key={capability}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{capability}</p>
-              <ArrowDownRight size={20} />
-            </div>
+            <details key={capability.title}>
+              <summary>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{capability.title}</p>
+                <ArrowDownRight className="capability-arrow" size={20} />
+              </summary>
+              <p className="capability-description">{capability.description}</p>
+            </details>
           ))}
         </div>
       </section>
@@ -267,8 +295,22 @@ export default function Home() {
         <BrandMark />
         <p>People first. Systems that work. Business made easier.</p>
         <div className="social-links">
-          <a href="#" aria-label="Instagram"><span aria-hidden="true">IG</span></a>
-          <a href="#" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
+          <a
+            href="https://www.instagram.com/thehumancoo/"
+            aria-label="The Human COO on Instagram"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span aria-hidden="true">IG</span>
+          </a>
+          <a
+            href="https://www.tiktok.com/@thehumancoo"
+            aria-label="The Human COO on TikTok"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span aria-hidden="true">TT</span>
+          </a>
         </div>
         <span>© {new Date().getFullYear()} The Human COO</span>
       </footer>

@@ -115,10 +115,16 @@ main { overflow: hidden; }
 
 .capabilities-section { background: var(--paper); }
 .capability-list { border-top: 1px solid var(--line); margin-top: 68px; }
-.capability-list > div { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 24px; grid-template-columns: 42px 1fr auto; min-height: 75px; }
-.capability-list span { color: var(--clay); font-size: 11px; letter-spacing: .12em; }
-.capability-list p { font-family: "Montserrat", "Avenir Next", Arial, sans-serif; font-size: clamp(18px, 1.8vw, 24px); font-weight: 600; margin: 0; }
-.capability-list svg { color: var(--muted); }
+.capability-list details { border-bottom: 1px solid var(--line); }
+.capability-list summary { align-items: center; cursor: pointer; display: grid; gap: 24px; grid-template-columns: 42px 1fr auto; list-style: none; min-height: 75px; }
+.capability-list summary::-webkit-details-marker { display: none; }
+.capability-list summary > span { color: var(--clay); font-size: 11px; letter-spacing: .12em; }
+.capability-list summary > p { font-family: "Montserrat", "Avenir Next", Arial, sans-serif; font-size: clamp(18px, 1.8vw, 24px); font-weight: 600; margin: 0; }
+.capability-list summary:hover > p { color: var(--clay); }
+.capability-list summary:focus-visible { outline: 2px solid var(--clay); outline-offset: 5px; }
+.capability-arrow { color: var(--muted); transition: color .2s ease, transform .2s ease; }
+.capability-list details[open] .capability-arrow { color: var(--clay); transform: rotate(90deg); }
+.capability-description { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0 44px 24px 66px; max-width: 760px; }
 
 .about-section { background: var(--white); border-bottom: 1px solid var(--line); display: grid; gap: 70px; grid-template-columns: .38fr 1fr; }
 .about-label { color: var(--forest); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; writing-mode: vertical-rl; }
@@ -151,7 +157,8 @@ main { overflow: hidden; }
 footer { align-items: end; background: var(--white); color: var(--forest); display: grid; gap: 30px; grid-template-columns: 1fr 1.6fr auto; padding: 70px clamp(24px, 7vw, 110px) 35px; }
 footer > p { color: var(--muted); font-size: 18px; line-height: 1.55; margin: 0; max-width: 460px; }
 .social-links { display: flex; gap: 10px; }
-.social-links a { align-items: center; border: 1px solid rgba(53,24,47,.25); border-radius: 50%; display: flex; height: 40px; justify-content: center; width: 40px; }
+.social-links a { align-items: center; border: 1px solid rgba(53,24,47,.25); border-radius: 50%; display: flex; font-size: 11px; font-weight: 700; height: 40px; justify-content: center; transition: background .2s ease, color .2s ease; width: 40px; }
+.social-links a:hover { background: var(--forest); color: white; }
 footer > span { border-top: 1px solid rgba(53,24,47,.15); color: var(--muted); font-size: 10px; grid-column: 1 / -1; margin-top: 35px; padding-top: 25px; }
 
 @media (max-width: 900px) {
@@ -181,6 +188,8 @@ footer > span { border-top: 1px solid rgba(53,24,47,.15); color: var(--muted); f
   .problem-item:nth-child(odd), .problem-item:nth-child(even) { border-right: 0; padding: 18px 0; }
   .about-columns { grid-template-columns: 1fr; }
   .service-card { min-height: 350px; }
+  .capability-list summary { gap: 15px; grid-template-columns: 32px 1fr auto; }
+  .capability-description { margin-left: 47px; }
   footer { align-items: start; grid-template-columns: 1fr; }
   footer > p, footer > span { grid-column: 1; }
 }

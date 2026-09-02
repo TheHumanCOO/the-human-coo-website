@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thehumancoo.co.uk"),
   title: "The Human COO | Making business easier to run",
   description:
-    "Practical operations support for small businesses. Simplify your processes, connect your systems and spend less time on admin.",
+    "Practical operations support for founders, growing teams and established organisations. Simplify processes, connect systems and spend less time on admin.",
   openGraph: {
     title: "The Human COO | Making business easier to run",
     description:
-      "Practical operations support, smarter systems and less admin for small businesses.",
+      "Practical operations support, smarter systems and less admin for founders, growing teams and established organisations.",
     type: "website",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Human COO | Making business easier to run",
     description:
-      "Practical operations support, smarter systems and less admin for small businesses.",
+      "Practical operations support, smarter systems and less admin for founders, growing teams and established organisations.",
     images: ["/og.png"],
   },
   icons: {
