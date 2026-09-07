@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /report/
 
 Sitemap: https://thehumancoo.com/sitemap.xml
