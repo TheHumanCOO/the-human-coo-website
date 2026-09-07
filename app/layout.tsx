@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://thehumancoo.com"),
   verification: {
-    google: "EIuaj6wnrOtjlazogaPy4for4MVq2hkRw7O5TPKUk4s",
+    google: "EvJHbuunVR-hSowyDA-XVcbtRUMr6EamNTBkT_KpaH4",
   },
   title: "The Human COO | Making business easier to run",
   description:
