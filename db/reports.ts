@@ -1,4 +1,4 @@
-import { and, eq, gt } from "drizzle-orm";
+import { eq, lte } from "drizzle-orm";
 import {
   reportCategories,
   type BusinessClarityReportInput,
@@ -9,12 +9,18 @@ import { businessClarityReports } from "./schema";
 export async function createBusinessClarityReport(
   input: BusinessClarityReportInput,
 ) {
+  const now = new Date();
   const id = crypto.randomUUID();
   const expiresAt = new Date(
-    Date.now() + input.expiresInDays * 24 * 60 * 60 * 1000,
+    now.getTime() + input.expiresInDays * 24 * 60 * 60 * 1000,
   ).toISOString();
 
-  await getDb().insert(businessClarityReports).values({
+  const db = getDb();
+  await db
+    .delete(businessClarityReports)
+    .where(lte(businessClarityReports.expiresAt, now.toISOString()));
+
+  await db.insert(businessClarityReports).values({
     id,
     recipientName: input.recipientName,
     businessName: input.businessName || null,
@@ -36,18 +42,20 @@ export async function createBusinessClarityReport(
 }
 
 export async function getBusinessClarityReport(id: string) {
-  const [row] = await getDb()
+  const db = getDb();
+  const [row] = await db
     .select()
     .from(businessClarityReports)
-    .where(
-      and(
-        eq(businessClarityReports.id, id),
-        gt(businessClarityReports.expiresAt, new Date().toISOString()),
-      ),
-    )
+    .where(eq(businessClarityReports.id, id))
     .limit(1);
 
   if (!row) return null;
+  if (row.expiresAt <= new Date().toISOString()) {
+    await db
+      .delete(businessClarityReports)
+      .where(eq(businessClarityReports.id, id));
+    return null;
+  }
 
   const primaryCategory = reportCategories.find(
     (category) => category === row.primaryCategory,
