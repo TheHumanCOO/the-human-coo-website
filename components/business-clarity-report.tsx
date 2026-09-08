@@ -128,7 +128,7 @@ export function BusinessClarityReportView({
 
         <section className={styles.supportSection}>
           <div>
-            <p className={styles.kicker}>What support may suit you</p>
+            <p className={styles.kicker}>If you’d like help with this</p>
             <h2>You do not have to work it all out alone.</h2>
             <p>{report.supportMaySuit}</p>
             <p className={styles.noObligation}>
