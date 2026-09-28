@@ -1,4 +1,4 @@
-import { env } from "cloudflare:workers";
+const env = process.env;
 import { createBusinessClarityReport } from "../../../db/reports";
 import { businessClarityReportInputSchema } from "../../../lib/business-clarity-report";
 
