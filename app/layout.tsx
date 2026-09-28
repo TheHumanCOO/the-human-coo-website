@@ -70,6 +70,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-XX153Z10R6"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XX153Z10R6');
+  `}
+</Script>
         {children}
         <script
           id="organisation-structured-data"
